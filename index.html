@@ -134,18 +134,25 @@
       font-family: 'DM Sans', sans-serif;
       font-size: clamp(56px, 11vw, 156px);
       font-weight: 900;
-      line-height: 1.0;
+      line-height: 0.9;
       letter-spacing: -4px;
       color: var(--text);
       margin-bottom: 56px;
     }
     .hero h1 .highlight {
+      position: relative;
+      display: inline-block;
+      z-index: 0;
+    }
+    .hero h1 .highlight::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: -8px;
+      right: -8px;
+      bottom: 0.14em;
+      height: 0.58em;
       background: var(--highlight);
-      background-size: 100% 44%;
-      background-repeat: no-repeat;
-      background-position: 0 74%;
-      padding: 0 6px;
-      margin: 0 -6px;
     }
 
     .hero p.lead {
