@@ -3,62 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vector0 — Indie iOS Developer</title>
-  <meta name="description" content="Solo iOS developer building polished SwiftUI games and tools for Apple platforms." />
-  <meta property="og:title" content="Vector0 — Indie iOS Developer" />
-  <meta property="og:description" content="SwiftUI games and tools for Apple platforms." />
+  <title>Rakesh Varma — Mobile & AI Engineer</title>
+  <meta name="description" content="Lead iOS · Mobile · AI engineer. Ex-Apple contractor. 9+ years shipping production apps and on-device ML for Fortune-tier clients, plus solo indie games under Vector0." />
+  <meta property="og:title" content="Rakesh Varma — Mobile & AI Engineer" />
+  <meta property="og:description" content="Lead iOS · Mobile · AI. Ex-Apple contractor. Shipped apps, on-device ML, agentic AI." />
   <meta property="og:type" content="website" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a0a0f'/><text x='50' y='68' font-size='62' font-weight='900' text-anchor='middle' fill='%23CEFA52' font-family='-apple-system,Helvetica'>V</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a0a0f'/><text x='50' y='70' font-size='62' font-weight='900' text-anchor='middle' fill='%23CEFA52' font-family='-apple-system,Helvetica'>R</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --bg: #0a0a0f;
-      --bg-2: #111119;
-      --card: #15151f;
+      --bg-2: #0f0f17;
+      --card: #14141d;
+      --card-hi: #1a1a26;
       --card-stroke: rgba(255, 255, 255, 0.06);
-      --text: #f1f5f9;
+      --card-stroke-hi: rgba(255, 255, 255, 0.12);
+      --text: #f5f5f7;
       --text-soft: #a1a1aa;
-      --text-dim: #64748b;
+      --text-dim: #64646e;
       --lime: #CEFA52;
+      --lime-soft: rgba(206, 250, 82, 0.10);
+      --lime-stroke: rgba(206, 250, 82, 0.28);
       --cyan: #7fffff;
+      --cyan-soft: rgba(127, 255, 255, 0.10);
+      --cyan-stroke: rgba(127, 255, 255, 0.28);
       --purple: #B388FF;
+      --purple-soft: rgba(179, 136, 255, 0.10);
+      --purple-stroke: rgba(179, 136, 255, 0.28);
       --pink: #ff6ee7;
+      --pink-soft: rgba(255, 110, 231, 0.10);
+      --orange: #ffb347;
+      --orange-soft: rgba(255, 179, 71, 0.10);
     }
 
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: var(--bg);
       color: var(--text-soft);
       line-height: 1.65;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      font-feature-settings: "ss01", "cv11";
     }
 
-    body::before {
-      content: "";
+    /* Animated background gradient blobs */
+    .bg-fx {
       position: fixed;
-      top: -200px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 900px;
-      height: 700px;
-      background: radial-gradient(ellipse at center, rgba(206, 250, 82, 0.10), rgba(127, 255, 255, 0.06) 40%, transparent 70%);
+      inset: 0;
       pointer-events: none;
       z-index: 0;
+      overflow: hidden;
+    }
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(110px);
+      opacity: 0.55;
+      animation: drift 22s ease-in-out infinite;
+    }
+    .blob.lime  { width: 520px; height: 520px; background: rgba(206, 250, 82, 0.18); top: -120px; left: 25%; animation-delay: 0s; }
+    .blob.cyan  { width: 460px; height: 460px; background: rgba(127, 255, 255, 0.10); top: 8%; right: -100px; animation-delay: -6s; }
+    .blob.purple{ width: 580px; height: 580px; background: rgba(179, 136, 255, 0.12); top: 38%; left: -120px; animation-delay: -12s; }
+
+    @keyframes drift {
+      0%, 100% { transform: translate(0, 0); }
+      33%      { transform: translate(50px, 30px); }
+      66%      { transform: translate(-30px, -40px); }
     }
 
     .container {
-      max-width: 920px;
+      max-width: 1040px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 28px;
       position: relative;
       z-index: 1;
     }
 
     /* NAV */
     nav {
-      padding: 28px 0;
+      padding: 24px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -66,14 +95,14 @@
 
     .logo {
       font-weight: 800;
-      font-size: 17px;
-      letter-spacing: -0.3px;
+      font-size: 16px;
+      letter-spacing: -0.2px;
       color: var(--text);
       display: flex;
       align-items: center;
       gap: 10px;
+      text-decoration: none;
     }
-
     .logo-mark {
       width: 26px;
       height: 26px;
@@ -84,48 +113,38 @@
       justify-content: center;
       font-weight: 900;
       color: var(--bg);
-      font-size: 14px;
+      font-size: 13px;
     }
-
-    nav .nav-links {
-      display: flex;
-      gap: 28px;
-    }
-
-    nav a {
+    nav .nav-links { display: flex; gap: 28px; }
+    nav .nav-links a {
       color: var(--text-soft);
       text-decoration: none;
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 500;
       transition: color 0.15s;
     }
-
-    nav a:hover { color: var(--text); }
+    nav .nav-links a:hover { color: var(--text); }
 
     /* HERO */
-    .hero {
-      padding: 88px 0 96px;
-    }
+    .hero { padding: 76px 0 88px; }
 
-    .hero-eyebrow {
+    .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 6px 14px;
       border-radius: 999px;
-      background: rgba(206, 250, 82, 0.08);
-      border: 1px solid rgba(206, 250, 82, 0.2);
+      background: var(--lime-soft);
+      border: 1px solid var(--lime-stroke);
       color: var(--lime);
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 600;
-      letter-spacing: 0.4px;
-      margin-bottom: 28px;
+      letter-spacing: 0.3px;
+      margin-bottom: 30px;
     }
-
-    .hero-eyebrow::before {
+    .eyebrow::before {
       content: "";
-      width: 6px;
-      height: 6px;
+      width: 6px; height: 6px;
       border-radius: 50%;
       background: var(--lime);
       box-shadow: 0 0 12px var(--lime);
@@ -135,11 +154,10 @@
       font-size: clamp(40px, 6.5vw, 72px);
       font-weight: 800;
       line-height: 1.04;
-      letter-spacing: -1.5px;
+      letter-spacing: -1.8px;
       color: var(--text);
       margin-bottom: 22px;
     }
-
     .hero h1 .grad {
       background: linear-gradient(135deg, var(--lime), var(--cyan), var(--purple));
       -webkit-background-clip: text;
@@ -149,164 +167,236 @@
 
     .hero p.lead {
       font-size: 18px;
-      max-width: 580px;
+      max-width: 620px;
       color: var(--text-soft);
-      margin-bottom: 36px;
+      margin-bottom: 30px;
       line-height: 1.6;
     }
 
-    .hero-actions {
+    .hero-stats {
       display: flex;
-      gap: 12px;
+      gap: 32px;
       flex-wrap: wrap;
+      margin-bottom: 36px;
+      padding-top: 4px;
     }
+    .stat .stat-num {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.6px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat .stat-num .small { font-size: 16px; opacity: 0.7; }
+    .stat .stat-label {
+      font-size: 12px;
+      color: var(--text-dim);
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+
+    .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 13px 22px;
+      padding: 12px 20px;
       border-radius: 12px;
       font-weight: 600;
-      font-size: 14px;
+      font-size: 13.5px;
       text-decoration: none;
-      transition: transform 0.15s, background 0.15s, border-color 0.15s;
+      transition: transform 0.15s, background 0.15s, border-color 0.15s, color 0.15s;
       border: 1px solid transparent;
+      font-family: inherit;
+      cursor: pointer;
     }
-
-    .btn-primary {
-      background: var(--lime);
-      color: var(--bg);
-    }
-
+    .btn-primary { background: var(--lime); color: var(--bg); }
     .btn-primary:hover { transform: translateY(-1px); }
-
     .btn-ghost {
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.03);
       color: var(--text);
       border-color: rgba(255, 255, 255, 0.08);
     }
-
-    .btn-ghost:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.14); }
+    .btn-ghost:hover { background: rgba(255, 255, 255, 0.07); border-color: var(--card-stroke-hi); }
 
     /* SECTIONS */
-    section {
-      padding: 64px 0;
+    section { padding: 64px 0; position: relative; }
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
     }
-
-    section h2 {
-      font-size: 13px;
+    .section-head h2 {
+      font-size: 11.5px;
       font-weight: 800;
-      letter-spacing: 1.4px;
+      letter-spacing: 1.6px;
       text-transform: uppercase;
       color: var(--text-dim);
-      margin-bottom: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
-
-    section h2 .accent {
-      color: var(--lime);
+    .section-head h2 .accent {
+      width: 5px; height: 5px;
+      background: var(--lime);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--lime);
     }
-
-    section .section-lead {
+    .section-head .section-lead {
       font-size: 28px;
       font-weight: 700;
       color: var(--text);
       letter-spacing: -0.5px;
-      max-width: 640px;
-      margin-bottom: 36px;
+      max-width: 580px;
       line-height: 1.25;
+      margin-top: 6px;
     }
 
-    /* APPS */
-    .apps {
+    /* FILTER PILLS */
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .filter-pill {
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-stroke);
+      color: var(--text-soft);
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+    .filter-pill:hover { color: var(--text); border-color: var(--card-stroke-hi); }
+    .filter-pill.active {
+      background: var(--lime-soft);
+      border-color: var(--lime-stroke);
+      color: var(--lime);
+    }
+
+    /* PROJECTS */
+    .projects {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 14px;
     }
+    @media (max-width: 760px) { .projects { grid-template-columns: 1fr; } }
 
-    @media (max-width: 720px) {
-      .apps { grid-template-columns: 1fr; }
-    }
-
-    .app-card {
+    .project {
       background: var(--card);
       border: 1px solid var(--card-stroke);
-      border-radius: 22px;
-      padding: 24px;
+      border-radius: 20px;
+      padding: 22px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
-      transition: border-color 0.15s, transform 0.15s;
+      gap: 14px;
+      transition: all 0.2s ease;
       position: relative;
       overflow: hidden;
     }
-
-    .app-card:hover {
-      border-color: rgba(206, 250, 82, 0.22);
-      transform: translateY(-2px);
+    .project::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 1px;
+      background: linear-gradient(135deg, transparent 40%, var(--lime-stroke) 100%);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.2s;
+      pointer-events: none;
     }
+    .project:hover {
+      transform: translateY(-2px);
+      background: var(--card-hi);
+    }
+    .project:hover::before { opacity: 1; }
 
-    .app-card-header {
+    .project-head {
       display: flex;
       align-items: center;
       gap: 14px;
     }
-
-    .app-icon {
-      width: 64px;
-      height: 64px;
-      border-radius: 16px;
+    .project-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 13px;
       flex-shrink: 0;
       background: #222;
       object-fit: cover;
-    }
-
-    .app-icon-fallback {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 900;
-      color: var(--bg);
     }
-
-    .app-meta h3 {
-      font-size: 19px;
+    .project-meta h3 {
+      font-size: 18px;
       font-weight: 700;
       color: var(--text);
       letter-spacing: -0.3px;
-      margin-bottom: 2px;
+      line-height: 1.2;
     }
-
-    .app-meta .app-genre {
-      font-size: 13px;
+    .project-meta .project-sub {
+      font-size: 12px;
       color: var(--text-dim);
+      margin-top: 3px;
+      letter-spacing: 0.1px;
     }
 
-    .app-card p.app-desc {
-      font-size: 14px;
+    .project p.project-desc {
+      font-size: 13.5px;
       color: var(--text-soft);
       line-height: 1.6;
       flex: 1;
     }
 
-    .app-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .tag {
-      font-size: 11px;
+    .impact {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
       font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text-soft);
-      letter-spacing: 0.2px;
+      color: var(--lime);
+      padding: 6px 12px;
+      background: var(--lime-soft);
+      border: 1px solid var(--lime-stroke);
+      border-radius: 8px;
+      align-self: flex-start;
+      letter-spacing: 0.1px;
+    }
+    .impact::before {
+      content: "→";
+      font-weight: 700;
     }
 
-    .app-cta {
+    .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .tag {
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 999px;
+      letter-spacing: 0.2px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .tag.ios     { background: var(--lime-soft);   color: var(--lime);   border: 1px solid var(--lime-stroke); }
+    .tag.ai      { background: var(--purple-soft); color: var(--purple); border: 1px solid var(--purple-stroke); }
+    .tag.cross   { background: var(--cyan-soft);   color: var(--cyan);   border: 1px solid var(--cyan-stroke); }
+    .tag.system  { background: var(--orange-soft); color: var(--orange); border: 1px solid rgba(255, 179, 71, 0.28); }
+    .tag.pay     { background: var(--pink-soft);   color: var(--pink);   border: 1px solid rgba(255, 110, 231, 0.28); }
+
+    .project-cta {
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -316,51 +406,118 @@
       text-decoration: none;
       margin-top: 2px;
     }
+    .project-cta:hover { color: var(--cyan); }
 
-    .app-cta:hover { color: var(--cyan); }
-
-    .app-status {
+    .project-status {
       position: absolute;
       top: 18px;
       right: 18px;
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 700;
-      letter-spacing: 0.8px;
-      padding: 4px 10px;
+      letter-spacing: 0.7px;
+      padding: 3px 9px;
       border-radius: 999px;
-      background: rgba(127, 255, 255, 0.1);
+      background: var(--cyan-soft);
       color: var(--cyan);
-      border: 1px solid rgba(127, 255, 255, 0.25);
+      border: 1px solid var(--cyan-stroke);
+    }
+
+    /* TIMELINE */
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      bottom: 8px;
+      left: 6px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--lime), var(--cyan), var(--purple));
+      opacity: 0.4;
+    }
+    .timeline-item {
+      position: relative;
+      padding-bottom: 30px;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -28px;
+      top: 6px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--lime);
+      box-shadow: 0 0 10px var(--lime-soft);
+    }
+    .timeline-when {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-dim);
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .timeline-role {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.2px;
+      margin-bottom: 4px;
+    }
+    .timeline-company {
+      font-size: 13px;
+      color: var(--text-soft);
+      margin-bottom: 8px;
+    }
+    .timeline-company .grad-text {
+      background: linear-gradient(135deg, var(--lime), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 600;
+    }
+    .timeline-body {
+      font-size: 13.5px;
+      color: var(--text-soft);
+      line-height: 1.65;
+      max-width: 720px;
     }
 
     /* STACK */
-    .stack-grid {
+    .stack {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
     }
-
-    .stack-item {
+    .stack-group {
       background: var(--card);
       border: 1px solid var(--card-stroke);
-      border-radius: 12px;
-      padding: 14px 16px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      transition: border-color 0.15s;
+      border-radius: 16px;
+      padding: 20px;
     }
-
-    .stack-item:hover { border-color: rgba(206, 250, 82, 0.22); }
-
-    .stack-item .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--lime);
+    .stack-group h4 {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--lime);
+      margin-bottom: 12px;
+    }
+    .stack-items { display: flex; flex-wrap: wrap; gap: 6px; }
+    .stack-items .chip {
+      font-size: 11.5px;
+      font-weight: 500;
+      padding: 4px 9px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
     }
 
     /* ABOUT */
@@ -370,23 +527,16 @@
       border-radius: 22px;
       padding: 32px;
     }
-
     .about-card p {
-      font-size: 16px;
+      font-size: 15px;
       color: var(--text-soft);
-      max-width: 640px;
+      max-width: 720px;
       margin-bottom: 14px;
-      line-height: 1.7;
+      line-height: 1.75;
     }
-
-    .about-card p:last-of-type { margin-bottom: 24px; }
-
-    .contact-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
+    .about-card p strong { color: var(--text); font-weight: 600; }
+    .about-card p:last-of-type { margin-bottom: 22px; }
+    .contact-row { display: flex; flex-wrap: wrap; gap: 8px; }
     .contact-row a {
       display: inline-flex;
       align-items: center;
@@ -394,24 +544,24 @@
       padding: 10px 16px;
       border-radius: 10px;
       background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-stroke);
       color: var(--text);
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 600;
       text-decoration: none;
-      transition: background 0.15s, border-color 0.15s;
+      transition: all 0.15s;
     }
-
     .contact-row a:hover {
-      background: rgba(206, 250, 82, 0.08);
-      border-color: rgba(206, 250, 82, 0.22);
+      background: var(--lime-soft);
+      border-color: var(--lime-stroke);
+      color: var(--lime);
     }
 
     /* FOOTER */
     footer {
-      padding: 48px 0 64px;
-      border-top: 1px solid rgba(255, 255, 255, 0.04);
-      margin-top: 64px;
+      padding: 40px 0 56px;
+      border-top: 1px solid var(--card-stroke);
+      margin-top: 48px;
       font-size: 12px;
       color: var(--text-dim);
       display: flex;
@@ -419,130 +569,458 @@
       flex-wrap: wrap;
       gap: 12px;
     }
-
-    footer a {
-      color: var(--text-dim);
-      text-decoration: none;
-    }
-
+    footer a { color: var(--text-dim); text-decoration: none; }
     footer a:hover { color: var(--text-soft); }
 
-    @media (max-width: 540px) {
+    /* SCROLL REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* HIDDEN by filter */
+    .project[hidden] { display: none; }
+
+    @media (max-width: 560px) {
       nav .nav-links { display: none; }
-      .hero { padding: 56px 0 64px; }
+      .hero { padding: 52px 0 56px; }
       section { padding: 48px 0; }
       .about-card { padding: 24px; }
+      .hero-stats { gap: 24px; }
     }
   </style>
 </head>
 <body>
+  <div class="bg-fx">
+    <div class="blob lime"></div>
+    <div class="blob cyan"></div>
+    <div class="blob purple"></div>
+  </div>
+
   <div class="container">
 
     <nav>
-      <div class="logo">
-        <span class="logo-mark">V</span>
-        Vector0
-      </div>
+      <a class="logo" href="#"><span class="logo-mark">R</span> Rakesh Varma</a>
       <div class="nav-links">
-        <a href="#apps">Apps</a>
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
         <a href="#stack">Stack</a>
         <a href="#about">About</a>
       </div>
     </nav>
 
     <section class="hero">
-      <span class="hero-eyebrow">Available for iOS roles &amp; contract work</span>
-      <h1>Solo iOS developer.<br /><span class="grad">Apple platforms only.</span></h1>
-      <p class="lead">I ship polished SwiftUI games and tools as Vector0. Native frameworks first, no cross-platform compromise — Live Activities, Widgets, App Intents, Sign in with Apple, the whole stack used the way Apple intends.</p>
+      <span class="eyebrow">Open to senior &amp; lead iOS / mobile-AI roles</span>
+      <h1>Mobile &amp; AI engineer.<br /><span class="grad">Ex-Apple contractor.</span></h1>
+      <p class="lead">9+ years shipping production iOS and cross-platform apps across retail point-of-sale, payments, airline operations, and on-device machine learning. Indie publisher under Vector0 on the side. Lately focused on agentic AI &mdash; LangGraph, MCP, on-device Foundation Models.</p>
+
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">9<span class="small">+ yrs</span></div><div class="stat-label">Shipping production iOS</div></div>
+        <div class="stat"><div class="stat-num">$1M<span class="small">+/yr</span></div><div class="stat-label">Saved via on-device ML</div></div>
+        <div class="stat"><div class="stat-num">500<span class="small">+ stores</span></div><div class="stat-label">Apple Retail POS reach</div></div>
+        <div class="stat"><div class="stat-num">5<span class="small"> apps</span></div><div class="stat-label">Live in the App Store</div></div>
+      </div>
+
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#apps">See the apps →</a>
-        <a class="btn btn-ghost" href="mailto:vectorxlabs@gmail.com">vectorxlabs@gmail.com</a>
+        <a class="btn btn-primary" href="#work">See the work →</a>
+        <a class="btn btn-ghost" href="mailto:devrakeshv@gmail.com">devrakeshv@gmail.com</a>
       </div>
     </section>
 
-    <section id="apps">
-      <h2><span class="accent">●</span>&nbsp;&nbsp;Shipping</h2>
-      <p class="section-lead">Apps in the App Store, built solo end-to-end.</p>
+    <section id="work" class="reveal">
+      <div class="section-head">
+        <div>
+          <h2><span class="accent"></span> Selected Work</h2>
+          <div class="section-lead">Shipped iOS, cross-platform, and AI projects.</div>
+        </div>
+      </div>
 
-      <div class="apps">
+      <div class="filter-row" role="tablist">
+        <button class="filter-pill active" data-filter="all">All</button>
+        <button class="filter-pill" data-filter="ios">iOS native</button>
+        <button class="filter-pill" data-filter="ai">AI / ML</button>
+        <button class="filter-pill" data-filter="cross">Cross-platform</button>
+        <button class="filter-pill" data-filter="pay">Payments</button>
+        <button class="filter-pill" data-filter="indie">Indie</button>
+      </div>
 
-        <article class="app-card">
-          <div class="app-card-header">
-            <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/26/5e/3c/265e3ce8-a90a-a81d-810b-881d83674c8f/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" alt="Grid Glide icon" />
-            <div class="app-meta">
-              <h3>Grid Glide</h3>
-              <div class="app-genre">Word puzzle · iOS</div>
-            </div>
-          </div>
-          <p class="app-desc">A fast-paced word puzzle game where you swipe to trace letters across a glowing grid. Rising difficulty, streak system, daily challenges. Designed for the 90-second break.</p>
-          <div class="app-tags">
-            <span class="tag">SwiftUI</span>
-            <span class="tag">Custom Animations</span>
-            <span class="tag">Haptics</span>
-            <span class="tag">Game Center</span>
-          </div>
-          <a class="app-cta" href="https://apps.apple.com/us/app/grid-glide/id6762373685" target="_blank" rel="noopener">Open in App Store ↗</a>
-        </article>
+      <div class="projects">
 
-        <article class="app-card">
-          <div class="app-card-header">
-            <div class="app-icon app-icon-fallback" style="background: linear-gradient(135deg, #0E0E0E, #1a1a1a); color: var(--lime);">▶</div>
-            <div class="app-meta">
+        <article class="project" data-cats="ios indie">
+          <div class="project-head">
+            <div class="project-icon" style="background: linear-gradient(135deg, #0E0E0E, #1a1a1a); color: var(--lime);">▶</div>
+            <div class="project-meta">
               <h3>Snap: Quiz Battles</h3>
-              <div class="app-genre">Trivia · iOS</div>
+              <div class="project-sub">Solo · iOS · SwiftUI · Vector0</div>
             </div>
           </div>
-          <p class="app-desc">Daily trivia in six pop-culture categories. A LIVE mode that simulates an 11-player round with named opponents and a leaderboard that shifts question by question — entirely client-side, no backend.</p>
-          <div class="app-tags">
-            <span class="tag">SwiftUI</span>
-            <span class="tag">Sign in with Apple</span>
-            <span class="tag">AVAudio</span>
-            <span class="tag">@AppStorage</span>
-            <span class="tag">Spring Animations</span>
+          <p class="project-desc">Daily trivia in six pop-culture categories with a fake-multiplayer LIVE mode &mdash; 11 named opponents whose scores tick question by question. Entirely client-side, no backend, sub-second cold start.</p>
+          <div class="tags">
+            <span class="tag ios">SwiftUI</span>
+            <span class="tag ios">Sign in with Apple</span>
+            <span class="tag ios">AVAudio</span>
+            <span class="tag ios">@AppStorage</span>
           </div>
-          <span class="app-status">In review</span>
+          <span class="project-status">In review</span>
+        </article>
+
+        <article class="project" data-cats="cross indie">
+          <div class="project-head">
+            <img class="project-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/26/5e/3c/265e3ce8-a90a-a81d-810b-881d83674c8f/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" alt="Grid Glide icon" />
+            <div class="project-meta">
+              <h3>Grid Glide</h3>
+              <div class="project-sub">Solo · Flutter · Vector0</div>
+            </div>
+          </div>
+          <p class="project-desc">A fast word-puzzle game with a celestial zero-gravity aesthetic. Wired Firebase Analytics, Crashlytics, and Cloud Messaging for an activation funnel and retention pushes. Top-10 App Store debut target in Word.</p>
+          <div class="tags">
+            <span class="tag cross">Flutter</span>
+            <span class="tag cross">Firebase</span>
+            <span class="tag cross">Analytics</span>
+            <span class="tag cross">FCM</span>
+          </div>
+          <a class="project-cta" href="https://apps.apple.com/us/app/grid-glide/id6762373685" target="_blank" rel="noopener">Open in App Store ↗</a>
+        </article>
+
+        <article class="project" data-cats="ai ios">
+          <div class="project-head">
+            <div class="project-icon" style="background: linear-gradient(135deg, #B388FF, #5A4DE3); color: white;">⌬</div>
+            <div class="project-meta">
+              <h3>MedBill Companion</h3>
+              <div class="project-sub">Personal · Agentic AI · iOS</div>
+            </div>
+          </div>
+          <p class="project-desc">Two-mode iOS app pairing on-device Apple Foundation Models for PHI-touching reasoning with cloud LLMs for pre-visit prep. A deliberate HIPAA-avoidance architecture &mdash; protected data never crosses the network. LangGraph for multi-step flows, MCP servers for external context.</p>
+          <div class="tags">
+            <span class="tag ai">Foundation Models</span>
+            <span class="tag ai">LangGraph</span>
+            <span class="tag ai">MCP</span>
+            <span class="tag ai">Llama 3.3 70B</span>
+            <span class="tag ios">Swift</span>
+          </div>
+        </article>
+
+        <article class="project" data-cats="ios ai">
+          <div class="project-head">
+            <div class="project-icon" style="background: linear-gradient(135deg, #ffb347, #ff6f5c); color: white;">⚐</div>
+            <div class="project-meta">
+              <h3>Airline Ops Platform</h3>
+              <div class="project-sub">Contract · Lead iOS · From scratch</div>
+            </div>
+          </div>
+          <p class="project-desc">Built a below-wing ground-ops platform from zero &mdash; real-time coordination for 200+ daily flights. Trained a custom CoreML image classifier with CreateML to enforce FAA fire-sprinkler clearance in cargo holds, replacing a third-party vendor. Offline-first with Realm and conflict resolution, APNS + WebSocket alerts, supervisor override workflows.</p>
+          <div class="tags">
+            <span class="tag ios">SwiftUI</span>
+            <span class="tag ai">CoreML</span>
+            <span class="tag ai">CreateML</span>
+            <span class="tag ai">AVFoundation</span>
+            <span class="tag ios">Realm</span>
+            <span class="tag system">APNS</span>
+          </div>
+          <div class="impact">$1M+ annual savings · 12 min faster turnaround per flight</div>
+        </article>
+
+        <article class="project" data-cats="ios system">
+          <div class="project-head">
+            <div class="project-icon" style="background: linear-gradient(135deg, #2D7A3E, #A0F2C0); color: white;">▤</div>
+            <div class="project-meta">
+              <h3>Native Check-In Kiosk</h3>
+              <div class="project-sub">Contract · iPad · Hardware integration</div>
+            </div>
+          </div>
+          <p class="project-desc">Native iOS kiosk replacing a legacy third-party check-in stack. Drove thermal-printer integration (KPM180H over TCP/Ethernet, AEA/BTT bag-tag standards), MDM enrollment, Single App Mode, and ACAA accessibility. POC presented in a scoping meeting with Apple's enterprise team.</p>
+          <div class="tags">
+            <span class="tag ios">UIKit</span>
+            <span class="tag system">TCP/Ethernet</span>
+            <span class="tag system">MDM</span>
+            <span class="tag system">AEA/BTT</span>
+            <span class="tag ios">Accessibility</span>
+          </div>
+        </article>
+
+        <article class="project" data-cats="ios pay">
+          <div class="project-head">
+            <div class="project-icon" style="background: linear-gradient(135deg, #ff6f5c, #ffb347); color: white;">✈</div>
+            <div class="project-meta">
+              <h3>National Carrier Mobile App</h3>
+              <div class="project-sub">Contract · Critical features · Millions of users</div>
+            </div>
+          </div>
+          <p class="project-desc">Shipped Manage Travel, Seat Selection, Payment Flows, and Check-In. Apple Pay via PassKit with tokenized processing, custom UICollectionView seat map driving +20% ancillary revenue, address-validation reducing cart abandonment 15%. Led CocoaPods → SPM migration cutting build times 30%, plus Alamofire → Combine/async-await refactor.</p>
+          <div class="tags">
+            <span class="tag ios">Swift</span>
+            <span class="tag ios">Combine</span>
+            <span class="tag pay">Apple Pay</span>
+            <span class="tag pay">PassKit</span>
+            <span class="tag system">Adobe Analytics</span>
+            <span class="tag ios">SPM</span>
+          </div>
+          <div class="impact">+20% ancillary revenue · 30% faster builds · 99.9% API uptime</div>
+        </article>
+
+        <article class="project" data-cats="ios pay">
+          <div class="project-head">
+            <div class="project-icon" style="background: linear-gradient(135deg, #f5f5f7, #a1a1aa); color: black;">⌘</div>
+            <div class="project-meta">
+              <h3>Retail Point-of-Sale Modernization</h3>
+              <div class="project-sub">Ex-Apple contractor · 500+ stores worldwide</div>
+            </div>
+          </div>
+          <p class="project-desc">Led the Objective-C → Swift migration of the Retail POS within VIPER, cutting code complexity 40%. Shipped returns, trade-ins, and bundle transaction flows in UIKit, then SwiftUI screens with declarative @State management. Optimized memory with Instruments (−25% footprint, +30% launch). Set up Jenkins CI/CD, XCTest/XCUITest to 85% coverage.</p>
+          <div class="tags">
+            <span class="tag ios">Swift</span>
+            <span class="tag ios">Objective-C</span>
+            <span class="tag ios">VIPER</span>
+            <span class="tag ios">SwiftUI</span>
+            <span class="tag ios">XCTest</span>
+            <span class="tag system">Jenkins</span>
+          </div>
+          <div class="impact">500+ Apple Retail stores · −40% code complexity · −25% memory</div>
+        </article>
+
+        <article class="project" data-cats="ios pay">
+          <div class="project-head">
+            <div class="project-icon" style="background: linear-gradient(135deg, #f5f5f7, #cfcfd7); color: black;">⎈</div>
+            <div class="project-meta">
+              <h3>Tap to Pay &amp; Wallet Integrations</h3>
+              <div class="project-sub">Ex-Apple contractor · iOS payments stack</div>
+            </div>
+          </div>
+          <p class="project-desc">Built Tap to Pay on iPhone acceptance flows via the ProximityReader framework, enabling merchant POS to take contactless payments from any NFC-presented wallet. Certified payment paths across Stripe, ACH, and PayPal behind a single PassKit-fronted iOS surface. Apollo iOS GraphQL with normalized caching for merchant/transaction queries.</p>
+          <div class="tags">
+            <span class="tag pay">PassKit</span>
+            <span class="tag pay">ProximityReader</span>
+            <span class="tag pay">Stripe</span>
+            <span class="tag system">Apollo GraphQL</span>
+            <span class="tag pay">Tokenization</span>
+          </div>
+        </article>
+
+        <article class="project" data-cats="cross ios">
+          <div class="project-head">
+            <div class="project-icon" style="background: linear-gradient(135deg, #00a8e8, #007ea7); color: white;">⌬</div>
+            <div class="project-meta">
+              <h3>Enterprise Auth &amp; Field Apps</h3>
+              <div class="project-sub">Contract · React Native + native iOS</div>
+            </div>
+          </div>
+          <p class="project-desc">Designed and shipped multiple enterprise apps from scratch &mdash; multi-factor auth, field comms, and operations tooling &mdash; for 10,000+ corporate users. Hybrid stack: React Native UIs with native iOS modules, with manually tuned JavaScript-to-native bridge calls for camera, biometrics, and push.</p>
+          <div class="tags">
+            <span class="tag cross">React Native</span>
+            <span class="tag ios">Native modules</span>
+            <span class="tag ios">Biometrics</span>
+            <span class="tag system">Enterprise MDM</span>
+          </div>
         </article>
 
       </div>
     </section>
 
-    <section id="stack">
-      <h2><span class="accent">●</span>&nbsp;&nbsp;Stack</h2>
-      <p class="section-lead">What I reach for on Apple platforms.</p>
-      <div class="stack-grid">
-        <div class="stack-item"><span class="dot"></span> SwiftUI</div>
-        <div class="stack-item"><span class="dot"></span> Swift Concurrency</div>
-        <div class="stack-item"><span class="dot"></span> SwiftData</div>
-        <div class="stack-item"><span class="dot"></span> WidgetKit</div>
-        <div class="stack-item"><span class="dot"></span> Live Activities</div>
-        <div class="stack-item"><span class="dot"></span> App Intents</div>
-        <div class="stack-item"><span class="dot"></span> Sign in with Apple</div>
-        <div class="stack-item"><span class="dot"></span> AVFoundation</div>
-        <div class="stack-item"><span class="dot"></span> StoreKit 2</div>
-        <div class="stack-item"><span class="dot"></span> Combine</div>
-        <div class="stack-item"><span class="dot"></span> Core Animation</div>
-        <div class="stack-item"><span class="dot"></span> TipKit</div>
+    <section id="experience" class="reveal">
+      <div class="section-head">
+        <div>
+          <h2><span class="accent"></span> Experience</h2>
+          <div class="section-lead">Where the production work shipped from.</div>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-when">Sep 2024 — May 2026</div>
+          <div class="timeline-role">Senior / Lead iOS Developer</div>
+          <div class="timeline-company">National low-cost carrier · <span class="grad-text">Contract</span></div>
+          <p class="timeline-body">Built a below-wing ops platform from scratch with on-device ML, replaced a legacy check-in kiosk with native iOS, and led mobile-app modernization (SPM, Adobe Analytics, Swift Concurrency). Apple Pay rollout, dynamic seat-map UX, and a CoreML compliance model that saved $1M+/yr.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-when">Aug 2019 — Aug 2024</div>
+          <div class="timeline-role">Senior iOS Engineer</div>
+          <div class="timeline-company"><span class="grad-text">Ex-Apple contractor</span> · Retail Engineering</div>
+          <p class="timeline-body">Drove Objective-C → Swift migration in VIPER for the Retail POS used in 500+ stores. Built Tap to Pay on iPhone acceptance flows, Wallet integrations, multi-gateway payment paths (Stripe, ACH, PayPal) behind a single PassKit surface. Apollo iOS GraphQL. Jenkins CI/CD with 85% test coverage.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-when">Sep 2018 — Aug 2019</div>
+          <div class="timeline-role">iOS Application Developer</div>
+          <div class="timeline-company">Tier-1 US telecom · Contract</div>
+          <p class="timeline-body">Shipped enterprise auth, field-ops, and customer-facing apps for 10,000+ corporate users. Hybrid React Native + native iOS modules with hand-tuned JS↔native bridges.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-when">May 2016 — Dec 2017</div>
+          <div class="timeline-role">Web Developer</div>
+          <div class="timeline-company">Software services · Hyderabad, India</div>
+          <p class="timeline-body">Full software lifecycle on front-end heavy projects &mdash; jQuery, AJAX, HTML/CSS, Bootstrap, MySQL. Where the engineering discipline started.</p>
+        </div>
       </div>
     </section>
 
-    <section id="about">
-      <h2><span class="accent">●</span>&nbsp;&nbsp;About</h2>
-      <p class="section-lead">Solo. Native. Shipping.</p>
+    <section id="stack" class="reveal">
+      <div class="section-head">
+        <div>
+          <h2><span class="accent"></span> Stack</h2>
+          <div class="section-lead">What I reach for, organized by where it lives.</div>
+        </div>
+      </div>
+
+      <div class="stack">
+        <div class="stack-group">
+          <h4>iOS Native</h4>
+          <div class="stack-items">
+            <span class="chip">Swift</span>
+            <span class="chip">SwiftUI</span>
+            <span class="chip">UIKit</span>
+            <span class="chip">Objective-C</span>
+            <span class="chip">Combine</span>
+            <span class="chip">async/await</span>
+            <span class="chip">VIPER</span>
+            <span class="chip">SwiftData</span>
+            <span class="chip">@AppStorage</span>
+            <span class="chip">Core Data</span>
+            <span class="chip">Realm</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <h4>Apple ML / Vision</h4>
+          <div class="stack-items">
+            <span class="chip">CoreML</span>
+            <span class="chip">CreateML</span>
+            <span class="chip">Vision</span>
+            <span class="chip">VisionKit</span>
+            <span class="chip">AVFoundation</span>
+            <span class="chip">Foundation Models</span>
+            <span class="chip">Live Activities</span>
+            <span class="chip">WidgetKit</span>
+            <span class="chip">App Intents</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <h4>AI Engineering</h4>
+          <div class="stack-items">
+            <span class="chip">LangGraph</span>
+            <span class="chip">MCP servers</span>
+            <span class="chip">Llama 3.3</span>
+            <span class="chip">Cloudflare Workers AI</span>
+            <span class="chip">Claude Code</span>
+            <span class="chip">GitHub Copilot</span>
+            <span class="chip">Prompt eng.</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <h4>Cross-Platform</h4>
+          <div class="stack-items">
+            <span class="chip">Flutter</span>
+            <span class="chip">React Native</span>
+            <span class="chip">JS↔native bridges</span>
+            <span class="chip">Dart</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <h4>Payments</h4>
+          <div class="stack-items">
+            <span class="chip">Apple Pay</span>
+            <span class="chip">PassKit</span>
+            <span class="chip">ProximityReader</span>
+            <span class="chip">Tap to Pay on iPhone</span>
+            <span class="chip">Stripe</span>
+            <span class="chip">PayPal</span>
+            <span class="chip">Tokenization</span>
+            <span class="chip">SSL pinning</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <h4>Backend &amp; Integrations</h4>
+          <div class="stack-items">
+            <span class="chip">GraphQL (Apollo)</span>
+            <span class="chip">REST</span>
+            <span class="chip">WebSocket</span>
+            <span class="chip">APNS</span>
+            <span class="chip">Firebase</span>
+            <span class="chip">FCM</span>
+            <span class="chip">Adobe Analytics</span>
+            <span class="chip">Adobe Target</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <h4>DevOps &amp; Tooling</h4>
+          <div class="stack-items">
+            <span class="chip">Jenkins</span>
+            <span class="chip">Azure DevOps</span>
+            <span class="chip">App Center</span>
+            <span class="chip">Dynatrace</span>
+            <span class="chip">Splunk</span>
+            <span class="chip">AWS EKS</span>
+            <span class="chip">Kubernetes</span>
+            <span class="chip">SPM</span>
+            <span class="chip">CocoaPods</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <h4>Testing &amp; Performance</h4>
+          <div class="stack-items">
+            <span class="chip">XCTest</span>
+            <span class="chip">XCUITest</span>
+            <span class="chip">Instruments</span>
+            <span class="chip">Time Profiler</span>
+            <span class="chip">Allocations</span>
+            <span class="chip">Leaks</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="reveal">
+      <div class="section-head">
+        <div>
+          <h2><span class="accent"></span> About</h2>
+          <div class="section-lead">Solo. Native first. Shipping.</div>
+        </div>
+      </div>
+
       <div class="about-card">
-        <p>I'm Rakesh — I build under the name <strong style="color: var(--text);">Vector0</strong>. Every app on this page was designed, coded, signed, and shipped solo. I'm an iOS-first developer; I don't use cross-platform frameworks because the Apple stack is good enough to deserve native attention.</p>
-        <p>Open to iOS engineering roles and contract work. Quick to ship, opinionated about polish, comfortable owning a feature end-to-end from design through App Store Connect.</p>
+        <p>I'm a <strong>Lead iOS developer</strong> with 9+ years on Apple platforms, including a five-year stretch as an <strong>Apple contractor</strong> on the Retail Engineering team. I've shipped production code across point-of-sale, payments, airline operations, and on-device machine learning &mdash; comfortable owning a feature end-to-end from dataset preparation through App Store release.</p>
+        <p>On the side I publish indie apps as <strong>Vector0</strong> &mdash; <em>Grid Glide</em> (Flutter, live) and <em>Snap: Quiz Battles</em> (SwiftUI, in App Store review). Lately spending evenings on <strong>agentic AI</strong>: on-device Apple Foundation Models, LangGraph workflows, MCP servers, and building entire projects through Claude Code loops.</p>
+        <p>Open to senior / lead / staff iOS roles, mobile-AI roles, and serious contract work. I move fast, polish hard, and ship.</p>
         <div class="contact-row">
-          <a href="mailto:vectorxlabs@gmail.com">✉ &nbsp;vectorxlabs@gmail.com</a>
-          <a href="https://github.com/vectorxlabs" target="_blank" rel="noopener">⌥ &nbsp;github.com/vectorxlabs</a>
+          <a href="mailto:devrakeshv@gmail.com">✉ devrakeshv@gmail.com</a>
+          <a href="https://linkedin.com/in/rakesh-varmaios" target="_blank" rel="noopener">in LinkedIn</a>
+          <a href="https://github.com/vectorxlabs" target="_blank" rel="noopener">⌥ GitHub</a>
         </div>
       </div>
     </section>
 
     <footer>
-      <span>© 2026 Vector0. Built solo with SwiftUI and stubbornness.</span>
+      <span>© 2026 Rakesh Varma · Built solo with HTML, CSS, and stubbornness.</span>
       <a href="https://vectorxlabs.github.io/snap-privacy/" target="_blank" rel="noopener">Privacy</a>
     </footer>
 
   </div>
+
+  <script>
+    // Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+    // Filter pills
+    const pills = document.querySelectorAll('.filter-pill');
+    const cards = document.querySelectorAll('.project');
+    pills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        pills.forEach((p) => p.classList.remove('active'));
+        pill.classList.add('active');
+        const f = pill.dataset.filter;
+        cards.forEach((card) => {
+          const cats = (card.dataset.cats || '').split(' ');
+          card.hidden = (f !== 'all' && !cats.includes(f));
+        });
+      });
+    });
+  </script>
 </body>
 </html>
