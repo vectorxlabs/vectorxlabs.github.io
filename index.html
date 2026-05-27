@@ -294,13 +294,15 @@
       justify-content: center;
       min-height: 400px;
     }
-    .work-visual img {
+    .work-visual img,
+    .work-visual video {
       max-width: 100%;
       max-height: 720px;
       display: block;
       border-radius: 24px;
       box-shadow: 0 24px 60px rgba(14, 14, 14, 0.18), 0 8px 20px rgba(14, 14, 14, 0.08);
     }
+    .work-visual video { background: #f0eee8; }
 
     /* MedBill placeholder visual */
     .agent-graph {
@@ -547,7 +549,7 @@
           <span class="work-status review">In App Store review</span>
         </div>
         <div class="work-visual">
-          <img src="images/snap-hero.jpg" alt="Snap: Quiz Battles app marketing visual" />
+          <video src="images/snap-loop.mp4" poster="images/snap-hero.jpg" autoplay loop muted playsinline preload="metadata" aria-label="Snap: Quiz Battles gameplay loop"></video>
         </div>
       </div>
     </section>
