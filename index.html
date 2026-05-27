@@ -143,6 +143,8 @@
       position: relative;
       display: inline-block;
       z-index: 0;
+      animation: glitch-in 0.85s steps(1) 0.15s both,
+                 glitch-loop 7s steps(1) 2.5s infinite;
     }
     .hero h1 .highlight::before {
       content: "";
@@ -153,6 +155,30 @@
       bottom: 0.14em;
       height: 0.58em;
       background: var(--highlight);
+    }
+
+    @keyframes glitch-in {
+      0%   { opacity: 0; transform: translate(0, 0); text-shadow: none; clip-path: inset(0 0 0 0); }
+      6%   { opacity: 1; transform: translate(-5px, 2px); text-shadow: 4px 0 #00e0ff, -4px 0 #ff2d55; clip-path: inset(8% 0 62% 0); }
+      14%  { transform: translate(5px, -2px); text-shadow: -5px 0 #00e0ff, 5px 0 #ff2d55; clip-path: inset(54% 0 18% 0); }
+      22%  { transform: translate(-3px, 1px); text-shadow: 3px 0 #00e0ff, -3px 0 #ff2d55; clip-path: inset(30% 0 44% 0); }
+      30%  { transform: translate(4px, 0); text-shadow: -4px 0 #ff2d55, 4px 0 #00e0ff; clip-path: inset(72% 0 4% 0); }
+      38%  { transform: translate(-2px, 0); text-shadow: 2px 0 #00e0ff, -2px 0 #ff2d55; clip-path: inset(4% 0 78% 0); }
+      46%  { transform: translate(2px, 0); text-shadow: -2px 0 #00e0ff, 2px 0 #ff2d55; clip-path: inset(40% 0 30% 0); }
+      54%  { transform: translate(-1px, 0); text-shadow: 1px 0 #00e0ff, -1px 0 #ff2d55; clip-path: inset(0 0 0 0); }
+      62%, 100% { opacity: 1; transform: translate(0, 0); text-shadow: none; clip-path: inset(0 0 0 0); }
+    }
+
+    @keyframes glitch-loop {
+      0%, 90%, 100% { text-shadow: none; transform: translate(0, 0); clip-path: inset(0 0 0 0); }
+      91% { text-shadow: 3px 0 #00e0ff, -3px 0 #ff2d55; transform: translate(-3px, 0); clip-path: inset(22% 0 52% 0); }
+      93% { text-shadow: -3px 0 #ff2d55, 3px 0 #00e0ff; transform: translate(3px, 0); clip-path: inset(58% 0 14% 0); }
+      95% { text-shadow: 2px 0 #00e0ff, -2px 0 #ff2d55; transform: translate(-1px, 0); clip-path: inset(38% 0 34% 0); }
+      96% { text-shadow: none; transform: translate(0, 0); clip-path: inset(0 0 0 0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero h1 .highlight { animation: none; }
     }
 
     .hero p.lead {
