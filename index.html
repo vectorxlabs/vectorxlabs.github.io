@@ -366,6 +366,106 @@
       justify-content: space-between;
     }
 
+    /* Pitch Pulse — Live Activity mockup */
+    .live-panel {
+      width: 100%;
+      aspect-ratio: 1 / 1.4;
+      max-width: 500px;
+      max-height: 700px;
+      background: linear-gradient(165deg, #16161c 0%, #0a0a0a 100%);
+      border-radius: 24px;
+      box-shadow: 0 24px 60px rgba(14, 14, 14, 0.20);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 56px 28px;
+    }
+    .live-panel .badge {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--highlight);
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(206, 250, 82, 0.3);
+    }
+    /* Dynamic Island pill */
+    .dyn-island {
+      background: #000;
+      border-radius: 999px;
+      padding: 13px 22px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 18px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    }
+    .dyn-island .team {
+      display: flex; align-items: center; gap: 7px;
+      font-family: 'DM Sans', sans-serif; font-weight: 800;
+      font-size: 16px; color: #fff; letter-spacing: -0.3px;
+    }
+    .dyn-island .dot {
+      width: 18px; height: 18px; border-radius: 50%;
+    }
+    .dyn-island .dot.arg { background: linear-gradient(135deg,#75AADB,#fff); }
+    .dyn-island .dot.bra { background: linear-gradient(135deg,#F7D712,#009B3A); }
+    .dyn-island .score {
+      font-family: 'DM Sans', sans-serif; font-weight: 900;
+      font-size: 20px; color: var(--highlight); letter-spacing: -0.5px;
+    }
+    .dyn-island .min {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      color: #ff5c5c; display: flex; align-items: center; gap: 4px;
+    }
+    .dyn-island .min::before {
+      content: ""; width: 6px; height: 6px; border-radius: 50%;
+      background: #ff3b30; box-shadow: 0 0 8px #ff3b30;
+      animation: pulse 1.6s ease-in-out infinite;
+    }
+    /* Live Activity card */
+    .la-card {
+      width: 100%;
+      margin-top: 28px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 18px;
+    }
+    .la-card .la-row {
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'DM Sans', sans-serif; font-weight: 700;
+      color: #fff; font-size: 17px; letter-spacing: -0.3px;
+    }
+    .la-card .la-sub {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px;
+      color: rgba(255,255,255,0.45); letter-spacing: 0.8px;
+      text-transform: uppercase; margin-top: 4px;
+    }
+    .la-card .momentum {
+      margin-top: 16px; height: 6px; border-radius: 999px;
+      background: rgba(255,255,255,0.1); overflow: hidden;
+    }
+    .la-card .momentum span {
+      display: block; height: 100%; width: 64%;
+      background: linear-gradient(90deg, var(--highlight), #7fffff);
+      border-radius: 999px;
+    }
+    .live-panel .footer {
+      position: absolute;
+      bottom: 20px; left: 24px; right: 24px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.4);
+      display: flex; justify-content: space-between;
+    }
+
     /* STACK */
     section.stack-section {
       padding: 120px 0;
@@ -645,9 +745,53 @@
       </div>
     </section>
 
+    <section class="work-section reveal">
+      <div class="work-meta-row">
+        <span><span class="num">04</span> &nbsp;&middot;&nbsp; Live Activities &middot; iOS</span>
+        <span>2026</span>
+      </div>
+      <div class="work-showcase flip">
+        <div class="work-info">
+          <h2>Pitch Pulse 26</h2>
+          <p class="work-blurb">A Lock-Screen-first companion for the 2026 football tournament. <em>Live Activities</em> push score and momentum in real time &mdash; no app open required. Dynamic Island states, Home Screen widgets, 104 fixtures, 16 host-city guides. Backed by Cloudflare Workers with in-edge APNs push. Zero tracking, $0/mo to run.</p>
+          <div class="work-tags">
+            <span class="tag">Swift 6</span>
+            <span class="tag">ActivityKit</span>
+            <span class="tag">WidgetKit</span>
+            <span class="tag">Dynamic Island</span>
+            <span class="tag">Cloudflare</span>
+            <span class="tag">APNs</span>
+          </div>
+          <span class="work-status proto">In development</span>
+        </div>
+        <div class="work-visual">
+          <div class="live-panel">
+            <div class="badge">● Live Activity</div>
+            <div class="dyn-island">
+              <span class="team"><span class="dot arg"></span>ARG</span>
+              <span class="score">2&ndash;1</span>
+              <span class="team">BRA<span class="dot bra"></span></span>
+              <span class="min">67'</span>
+            </div>
+            <div class="la-card">
+              <div class="la-row"><span>Argentina</span><span>2</span></div>
+              <div class="la-sub">Group Stage &middot; Live</div>
+              <div class="la-row" style="margin-top:12px;"><span>Brazil</span><span>1</span></div>
+              <div class="la-sub">Momentum</div>
+              <div class="momentum"><span></span></div>
+            </div>
+            <div class="footer">
+              <span>ActivityKit &middot; APNs</span>
+              <span>Lock Screen + Island</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="stack" class="stack-section reveal">
       <div class="stack-head">
-        <div class="stack-num">04 &nbsp;&middot;&nbsp; STACK</div>
+        <div class="stack-num">05 &nbsp;&middot;&nbsp; STACK</div>
         <h3 class="stack-title">What I build with.</h3>
       </div>
       <div class="stack-flow">
