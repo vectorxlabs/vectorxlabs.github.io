@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rakesh Varma — Mobile & AI Engineer</title>
-  <meta name="description" content="Mobile & AI engineer. Ex-Apple contractor. Shipping iOS, cross-platform, and AI products." />
-  <meta property="og:title" content="Rakesh Varma — Mobile & AI Engineer" />
-  <meta property="og:description" content="Mobile & AI engineer. Ex-Apple contractor." />
+  <title>Rakesh Varma — Vector0</title>
+  <meta name="description" content="Apps, games, AI agents. Built solo. Shipped under Vector0." />
+  <meta property="og:title" content="Rakesh Varma — Vector0" />
+  <meta property="og:description" content="Apps, games, AI agents. Built solo. Shipped under Vector0." />
   <meta property="og:type" content="website" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a0a0a'/><text x='50' y='70' font-size='62' font-weight='900' text-anchor='middle' fill='%23CEFA52' font-family='-apple-system,Helvetica'>R</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23F6F4EE'/><text x='50' y='72' font-size='62' font-weight='900' text-anchor='middle' fill='%230E0E0E' font-family='-apple-system,Helvetica'>V</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800;9..40,900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -23,8 +23,6 @@
       --text: #0E0E0E;
       --text-soft: #5C5C58;
       --text-dim: #9B9B95;
-      --lime: #2D7A3E;
-      --lime-soft: rgba(45, 122, 62, 0.10);
       --highlight: #CEFA52;
     }
 
@@ -34,11 +32,10 @@
       font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
       color: var(--text-soft);
-      line-height: 1.6;
+      line-height: 1.55;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       font-feature-settings: "ss01";
-      cursor: default;
     }
 
     /* Cursor follower */
@@ -54,13 +51,10 @@
       transform: translate(-50%, -50%);
       opacity: 0;
     }
-    .cursor.hover {
-      background: var(--highlight);
-    }
-    @media (pointer: fine) { .cursor.active { opacity: 1; } }
+    .cursor.hover { background: var(--highlight); }
 
     .container {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
       padding: 0 36px;
       position: relative;
@@ -74,7 +68,6 @@
       align-items: center;
       border-bottom: 1px solid var(--line);
     }
-
     .logo {
       display: inline-flex;
       align-items: center;
@@ -93,12 +86,7 @@
       background: var(--highlight);
       border: 1px solid rgba(0, 0, 0, 0.12);
     }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      align-items: center;
-    }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
     .nav-links a {
       color: var(--text-soft);
       text-decoration: none;
@@ -111,7 +99,7 @@
 
     /* HERO */
     .hero {
-      padding: 120px 0 140px;
+      padding: 160px 0 200px;
       max-width: 1100px;
     }
     .eyebrow {
@@ -124,8 +112,8 @@
       letter-spacing: 1.2px;
       text-transform: uppercase;
       color: var(--text);
-      margin-bottom: 40px;
-      padding: 6px 12px;
+      margin-bottom: 56px;
+      padding: 7px 14px;
       border-radius: 999px;
       background: var(--highlight);
     }
@@ -144,28 +132,27 @@
 
     .hero h1 {
       font-family: 'DM Sans', sans-serif;
-      font-size: clamp(56px, 10vw, 132px);
+      font-size: clamp(56px, 11vw, 156px);
       font-weight: 900;
-      line-height: 0.92;
-      letter-spacing: -3px;
+      line-height: 0.9;
+      letter-spacing: -4px;
       color: var(--text);
-      margin-bottom: 36px;
+      margin-bottom: 56px;
     }
-    .hero h1 .accent {
-      background: linear-gradient(120deg, var(--highlight) 0%, var(--highlight) 100%);
-      background-size: 100% 28%;
+    .hero h1 .highlight {
+      background: linear-gradient(120deg, var(--highlight), var(--highlight));
+      background-size: 100% 32%;
       background-repeat: no-repeat;
-      background-position: 0 88%;
-      padding: 0 4px;
-      margin: 0 -4px;
+      background-position: 0 86%;
+      padding: 0 6px;
+      margin: 0 -6px;
     }
 
     .hero p.lead {
       font-family: 'Inter', sans-serif;
-      font-size: 18px;
-      max-width: 560px;
+      font-size: 19px;
+      max-width: 540px;
       color: var(--text-soft);
-      margin-bottom: 44px;
       line-height: 1.55;
     }
     .hero p.lead em {
@@ -174,313 +161,333 @@
       font-weight: 500;
     }
 
-    .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 16px 24px;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 14px;
-      text-decoration: none;
-      transition: all 0.18s;
-      border: 1px solid transparent;
-      font-family: 'DM Sans', sans-serif;
-    }
-    .btn-primary {
-      background: var(--text);
-      color: var(--bg);
-    }
-    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 32px rgba(14, 14, 14, 0.22); }
-    .btn-ghost {
-      background: transparent;
-      color: var(--text);
-      border-color: var(--line-hi);
-    }
-    .btn-ghost:hover { background: rgba(14, 14, 14, 0.04); border-color: var(--text); }
-    .btn .arrow { transition: transform 0.18s; }
-    .btn:hover .arrow { transform: translateX(3px); }
-
     /* SECTION HEAD */
-    section {
-      padding: 100px 0;
-      position: relative;
-    }
-    .section-head {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 40px;
-      margin-bottom: 64px;
-      align-items: end;
-    }
-    @media (max-width: 760px) {
-      .section-head { grid-template-columns: 1fr; gap: 18px; margin-bottom: 40px; }
-    }
-    .section-num {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--text-dim);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .section-num::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: var(--line);
-    }
-    .section-title {
-      font-family: 'DM Sans', sans-serif;
-      font-size: clamp(36px, 5.5vw, 64px);
-      font-weight: 700;
-      letter-spacing: -1.5px;
-      color: var(--text);
-      line-height: 1.05;
-    }
-
-    /* WORK GRID */
-    .work-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
+    section.work-section {
+      padding: 120px 0;
       border-top: 1px solid var(--line);
     }
-    @media (max-width: 760px) { .work-grid { grid-template-columns: 1fr; } }
+    section.work-section:first-of-type { border-top: none; }
 
-    .work-item {
-      padding: 36px 28px;
-      border-bottom: 1px solid var(--line);
-      border-right: 1px solid var(--line);
-      position: relative;
-      transition: background 0.2s;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      min-height: 220px;
-    }
-    .work-item:nth-child(2n) { border-right: none; }
-    @media (max-width: 760px) { .work-item { border-right: none; min-height: auto; } }
-
-    .work-item:hover { background: var(--bg-2); }
-
-    .work-row-1 {
+    .work-meta-row {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
+      margin-bottom: 56px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      color: var(--text-soft);
-      letter-spacing: 1px;
+      font-size: 11.5px;
+      letter-spacing: 1.4px;
       text-transform: uppercase;
+      color: var(--text-dim);
     }
-    .work-row-1 .num { color: var(--text); font-weight: 500; }
-
-    .work-name {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 28px;
-      font-weight: 700;
+    .work-meta-row .num {
       color: var(--text);
-      letter-spacing: -0.8px;
-      line-height: 1.1;
+      font-weight: 500;
+    }
+
+    /* Work showcase */
+    .work-showcase {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .work-showcase.flip { grid-template-columns: 1fr 1.05fr; }
+    .work-showcase.flip .work-info { order: 2; }
+    .work-showcase.flip .work-visual { order: 1; }
+
+    @media (max-width: 880px) {
+      .work-showcase, .work-showcase.flip {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .work-showcase.flip .work-info { order: 1; }
+      .work-showcase.flip .work-visual { order: 2; }
+    }
+
+    .work-info h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(40px, 5.5vw, 76px);
+      font-weight: 800;
+      line-height: 0.98;
+      letter-spacing: -2px;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+    .work-info .work-blurb {
+      font-family: 'Inter', sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text-soft);
+      margin-bottom: 28px;
+      max-width: 460px;
+    }
+    .work-info .work-blurb em {
+      font-style: normal;
+      color: var(--text);
+      font-weight: 500;
     }
 
     .work-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-top: 4px;
+      margin-bottom: 32px;
     }
     .work-tags .tag {
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
       font-weight: 400;
       color: var(--text);
-      padding: 3px 9px;
+      padding: 4px 9px;
       border-radius: 4px;
       background: rgba(14, 14, 14, 0.06);
     }
 
     .work-link {
-      margin-top: auto;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text);
-      text-decoration: none;
-      font-family: 'JetBrains Mono', monospace;
-      letter-spacing: 0.4px;
-      border-bottom: 1px solid var(--highlight);
-      padding-bottom: 1px;
-      align-self: flex-start;
-    }
-    .work-link:hover { background: var(--highlight); }
-    .work-link:hover .arrow { transform: translate(2px, -2px); }
-    .work-link .arrow { transition: transform 0.18s; }
-
-    .work-meta {
-      font-size: 13px;
-      color: var(--text-soft);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.5;
-    }
-
-    /* TIMELINE */
-    .timeline-row {
-      display: grid;
-      grid-template-columns: 110px 1fr auto;
-      gap: 28px;
-      align-items: center;
-      padding: 22px 0;
-      border-bottom: 1px solid var(--line);
-      transition: padding-left 0.2s;
-    }
-    .timeline-row:first-child { border-top: 1px solid var(--line); }
-    .timeline-row:hover { padding-left: 12px; }
-
-    .timeline-year {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      color: var(--text-dim);
-      letter-spacing: 0.8px;
-    }
-    .timeline-role {
+      gap: 8px;
       font-family: 'DM Sans', sans-serif;
-      font-size: 19px;
+      font-size: 14px;
       font-weight: 600;
       color: var(--text);
-      letter-spacing: -0.3px;
+      text-decoration: none;
+      padding-bottom: 4px;
+      border-bottom: 2px solid var(--highlight);
+      transition: padding-left 0.18s, padding-right 0.18s;
     }
-    .timeline-role .where {
-      color: var(--text-soft);
-      font-weight: 400;
+    .work-link:hover {
+      background: var(--highlight);
     }
-    .timeline-link {
+    .work-link .arrow {
+      transition: transform 0.18s;
+      display: inline-block;
+    }
+    .work-link:hover .arrow { transform: translate(2px, -2px); }
+
+    .work-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
-      color: var(--text);
-      text-decoration: none;
-      letter-spacing: 0.5px;
-      border-bottom: 1px solid var(--highlight);
-      padding-bottom: 1px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: var(--text-soft);
     }
-    .timeline-link:hover { background: var(--highlight); }
+    .work-status::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--text-dim);
+    }
+    .work-status.live::before { background: #2D7A3E; }
+    .work-status.review::before { background: #ffb347; animation: pulse 2s ease-in-out infinite; }
+    .work-status.proto::before { background: var(--text-dim); }
 
-    @media (max-width: 600px) {
-      .timeline-row { grid-template-columns: 1fr; gap: 6px; padding: 18px 0; }
-      .timeline-role { font-size: 17px; }
+    /* Project visuals */
+    .work-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+    }
+    .work-visual img {
+      max-width: 100%;
+      max-height: 720px;
+      display: block;
+      border-radius: 24px;
+      box-shadow: 0 24px 60px rgba(14, 14, 14, 0.18), 0 8px 20px rgba(14, 14, 14, 0.08);
+    }
+
+    /* MedBill placeholder visual */
+    .agent-graph {
+      width: 100%;
+      aspect-ratio: 1 / 1.4;
+      max-width: 500px;
+      max-height: 700px;
+      background: linear-gradient(155deg, #1a1a1f 0%, #0a0a0a 100%);
+      border-radius: 24px;
+      box-shadow: 0 24px 60px rgba(14, 14, 14, 0.20);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .agent-graph svg { width: 86%; height: 86%; }
+    .agent-graph .node circle { fill: var(--highlight); filter: drop-shadow(0 0 12px rgba(206, 250, 82, 0.4)); }
+    .agent-graph .node-bg circle { fill: rgba(255, 255, 255, 0.04); }
+    .agent-graph .node text {
+      fill: white;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      text-anchor: middle;
+    }
+    .agent-graph line {
+      stroke: rgba(206, 250, 82, 0.5);
+      stroke-width: 1;
+      stroke-dasharray: 4 4;
+    }
+    .agent-graph .badge {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--highlight);
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(206, 250, 82, 0.3);
+    }
+    .agent-graph .footer {
+      position: absolute;
+      bottom: 20px;
+      left: 24px;
+      right: 24px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.4);
+      display: flex;
+      justify-content: space-between;
     }
 
     /* STACK */
-    .stack {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 0;
+    section.stack-section {
+      padding: 120px 0;
       border-top: 1px solid var(--line);
     }
-    .stack-group {
-      padding: 28px;
-      border-bottom: 1px solid var(--line);
-      border-right: 1px solid var(--line);
+    .stack-head {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      margin-bottom: 56px;
+      align-items: end;
     }
-    .stack-group:last-child { border-right: none; }
-    .stack-group h4 {
+    @media (max-width: 760px) { .stack-head { grid-template-columns: 1fr; gap: 16px; } }
+    .stack-num {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 500;
-      letter-spacing: 1.2px;
+      color: var(--text-dim);
+      letter-spacing: 1.4px;
       text-transform: uppercase;
-      color: var(--text-soft);
-      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    .stack-items {
+    .stack-num::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+    .stack-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 700;
+      letter-spacing: -1.5px;
+      color: var(--text);
+      line-height: 1.05;
+    }
+    .stack-flow {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 8px;
+      max-width: 880px;
     }
-    .chip {
+    .stack-flow .chip {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 11.5px;
+      font-size: 13px;
       font-weight: 400;
-      padding: 4px 9px;
-      border-radius: 5px;
-      background: rgba(14, 14, 14, 0.06);
+      padding: 6px 12px;
+      border-radius: 6px;
+      background: var(--bg-2);
       color: var(--text);
+      border: 1px solid var(--line);
+      transition: all 0.15s;
+    }
+    .stack-flow .chip:hover {
+      border-color: var(--text);
+      transform: translateY(-1px);
+    }
+    .stack-flow .chip.gold {
+      background: var(--highlight);
+      border-color: var(--highlight);
     }
 
-    /* ABOUT */
-    .about-grid {
+    /* CONTACT */
+    section.contact-section {
+      padding: 120px 0 60px;
+      border-top: 1px solid var(--line);
+    }
+    .contact-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
-      align-items: start;
+      align-items: end;
     }
-    @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
+    @media (max-width: 760px) { .contact-row { grid-template-columns: 1fr; gap: 40px; } }
 
-    .about-text p {
-      font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      color: var(--text-soft);
-      line-height: 1.75;
-      margin-bottom: 16px;
+    .contact-row h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(40px, 6.5vw, 96px);
+      font-weight: 800;
+      letter-spacing: -3px;
+      color: var(--text);
+      line-height: 0.94;
     }
-    .about-text p strong { color: var(--text); font-weight: 500; }
-    .about-text p:last-child { margin-bottom: 0; }
-
-    .contact-list {
+    .contact-row h3 .highlight {
+      background: var(--highlight);
+      padding: 0 6px;
+      margin: 0 -6px;
+    }
+    .contact-links {
       display: flex;
       flex-direction: column;
-      gap: 1px;
-      background: var(--line);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      gap: 2px;
     }
-    .contact-list a {
-      padding: 20px 0;
-      background: var(--bg);
+    .contact-links a {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
       color: var(--text);
       text-decoration: none;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: baseline;
       font-family: 'DM Sans', sans-serif;
       font-weight: 500;
       font-size: 17px;
-      transition: padding-left 0.2s, color 0.15s;
-      letter-spacing: -0.3px;
+      transition: padding-left 0.18s;
+      letter-spacing: -0.2px;
     }
-    .contact-list a:hover {
-      padding-left: 16px;
-      background: var(--highlight);
-    }
-    .contact-list a .arrow {
+    .contact-links a:first-child { border-top: 1px solid var(--line); }
+    .contact-links a:hover { padding-left: 16px; background: var(--highlight); }
+    .contact-links a .arrow {
       font-family: 'JetBrains Mono', monospace;
       font-size: 13px;
       color: var(--text-dim);
       transition: transform 0.18s, color 0.15s;
     }
-    .contact-list a:hover .arrow { color: var(--text); transform: translate(3px, -3px); }
+    .contact-links a:hover .arrow { color: var(--text); transform: translate(3px, -3px); }
 
     /* FOOTER */
     footer {
-      padding: 48px 0 56px;
-      border-top: 1px solid var(--line);
-      margin-top: 48px;
+      padding: 32px 0 48px;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 14px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 11.5px;
+      font-size: 11px;
       color: var(--text-dim);
-      letter-spacing: 0.4px;
+      letter-spacing: 0.6px;
     }
     footer a { color: var(--text-dim); text-decoration: none; }
     footer a:hover { color: var(--text-soft); }
@@ -488,18 +495,16 @@
     /* SCROLL REVEAL */
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      transform: translateY(28px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 560px) {
       .container { padding: 0 22px; }
-      nav .nav-links { gap: 18px; }
-      .hero { padding: 64px 0 80px; }
-      section { padding: 64px 0; }
-      .work-item { padding: 28px 22px; }
-      .stack-group { padding: 22px; }
+      .nav-links { gap: 16px; }
+      .hero { padding: 80px 0 100px; }
+      section.work-section, section.stack-section, section.contact-section { padding: 64px 0; }
     }
   </style>
 </head>
@@ -509,272 +514,167 @@
   <div class="container">
 
     <nav>
-      <a class="logo" href="#"><span class="logo-dot"></span> Rakesh Varma</a>
+      <a class="logo" href="#"><span class="logo-dot"></span> Vector0</a>
       <div class="nav-links">
         <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
         <a href="#stack">Stack</a>
+        <a href="#contact">Contact</a>
         <a href="https://linkedin.com/in/rakesh-varmaios" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
     </nav>
 
     <section class="hero">
-      <div class="eyebrow">Available for senior &amp; lead roles</div>
-      <h1>Mobile &amp; AI<br />engineer.<br /><span class="accent">Ex-Apple contractor.</span></h1>
-      <p class="lead">9+ years shipping native iOS, cross-platform, and on-device ML. Indie publisher under <em>Vector0</em>. Currently building agentic AI &mdash; <em>LangGraph, MCP, Apple Foundation Models</em>.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="https://linkedin.com/in/rakesh-varmaios" target="_blank" rel="noopener">Full résumé on LinkedIn <span class="arrow">↗</span></a>
-        <a class="btn btn-ghost" href="mailto:devrakeshv@gmail.com">Email <span class="arrow">→</span></a>
-      </div>
+      <div class="eyebrow">Building Vector0</div>
+      <h1>Apps. Games.<br /><span class="highlight">AI agents.</span></h1>
+      <p class="lead">Solo, native, indie. Currently shipping on Apple platforms &mdash; <em>SwiftUI, Foundation Models, LangGraph, MCP</em>.</p>
     </section>
 
-    <section id="work" class="reveal">
-      <div class="section-head">
-        <div class="section-num">01 — Selected Work</div>
-        <h3 class="section-title">A few of the shipped ones.</h3>
+    <section class="work-section reveal">
+      <div class="work-meta-row">
+        <span><span class="num">01</span> &nbsp;&middot;&nbsp; Trivia &middot; iOS &middot; SwiftUI</span>
+        <span>2026</span>
       </div>
-
-      <div class="work-grid">
-
-        <article class="work-item">
-          <div class="work-row-1"><span class="num">01</span><span>2026 · INDIE · iOS</span></div>
-          <div class="work-name">Snap: Quiz Battles</div>
-          <div class="work-meta">Daily trivia with a simulated-multiplayer LIVE mode. Solo build under Vector0.</div>
+      <div class="work-showcase">
+        <div class="work-info">
+          <h2>Snap: Quiz Battles</h2>
+          <p class="work-blurb">Daily pop-culture trivia with a <em>simulated-multiplayer</em> LIVE mode &mdash; 11 named opponents whose scores tick question by question. Entirely client-side. Sub-second cold start.</p>
           <div class="work-tags">
             <span class="tag">SwiftUI</span>
             <span class="tag">Sign in with Apple</span>
+            <span class="tag">AVAudio</span>
             <span class="tag">@AppStorage</span>
           </div>
-          <span class="work-link">In App Store review</span>
-        </article>
+          <span class="work-status review">In App Store review</span>
+        </div>
+        <div class="work-visual">
+          <img src="images/snap-hero.jpg" alt="Snap: Quiz Battles app marketing visual" />
+        </div>
+      </div>
+    </section>
 
-        <article class="work-item">
-          <div class="work-row-1"><span class="num">02</span><span>2025 · INDIE · FLUTTER</span></div>
-          <div class="work-name">Grid Glide</div>
-          <div class="work-meta">Fast word-puzzle game with a celestial aesthetic. Live in the App Store.</div>
+    <section class="work-section reveal">
+      <div class="work-meta-row">
+        <span><span class="num">02</span> &nbsp;&middot;&nbsp; Word Puzzle &middot; Flutter</span>
+        <span>2025</span>
+      </div>
+      <div class="work-showcase flip">
+        <div class="work-info">
+          <h2>Grid Glide</h2>
+          <p class="work-blurb">Fast word-puzzle game with a <em>celestial zero-gravity</em> aesthetic. Solo built on Flutter, wired with Firebase Analytics, Crashlytics, and FCM for an activation funnel and retention pushes.</p>
           <div class="work-tags">
             <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
             <span class="tag">Firebase</span>
-            <span class="tag">Analytics</span>
+            <span class="tag">FCM</span>
           </div>
           <a class="work-link" href="https://apps.apple.com/us/app/grid-glide/id6762373685" target="_blank" rel="noopener">Open in App Store <span class="arrow">↗</span></a>
-        </article>
+        </div>
+        <div class="work-visual">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/26/5e/3c/265e3ce8-a90a-a81d-810b-881d83674c8f/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" alt="Grid Glide app icon" style="max-width: 320px; aspect-ratio: 1; border-radius: 56px;" />
+        </div>
+      </div>
+    </section>
 
-        <article class="work-item">
-          <div class="work-row-1"><span class="num">03</span><span>2026 · PERSONAL · AI</span></div>
-          <div class="work-name">MedBill Companion</div>
-          <div class="work-meta">Agentic iOS app for medical-billing navigation. On-device Foundation Models + cloud LLMs behind a HIPAA-avoidance architecture.</div>
+    <section class="work-section reveal">
+      <div class="work-meta-row">
+        <span><span class="num">03</span> &nbsp;&middot;&nbsp; Agentic AI &middot; iOS</span>
+        <span>2026</span>
+      </div>
+      <div class="work-showcase">
+        <div class="work-info">
+          <h2>MedBill Companion</h2>
+          <p class="work-blurb">Two-mode iOS app pairing <em>on-device Apple Foundation Models</em> for PHI-touching reasoning with cloud LLMs for pre-visit prep. A HIPAA-avoidance architecture &mdash; protected data never leaves the device. LangGraph orchestrates multi-step flows. MCP servers connect external context.</p>
           <div class="work-tags">
             <span class="tag">Foundation Models</span>
             <span class="tag">LangGraph</span>
             <span class="tag">MCP</span>
-          </div>
-          <a class="work-link" href="https://linkedin.com/in/rakesh-varmaios" target="_blank" rel="noopener">Details on LinkedIn <span class="arrow">↗</span></a>
-        </article>
-
-        <article class="work-item">
-          <div class="work-row-1"><span class="num">04</span><span>2024–26 · CONTRACT · iOS · ML</span></div>
-          <div class="work-name">Airline Ops Platform</div>
-          <div class="work-meta">Built a below-wing operations platform from scratch with a custom CoreML compliance model.</div>
-          <div class="work-tags">
-            <span class="tag">SwiftUI</span>
-            <span class="tag">CoreML</span>
-            <span class="tag">CreateML</span>
-            <span class="tag">Realm</span>
-          </div>
-          <a class="work-link" href="https://linkedin.com/in/rakesh-varmaios" target="_blank" rel="noopener">Details on LinkedIn <span class="arrow">↗</span></a>
-        </article>
-
-        <article class="work-item">
-          <div class="work-row-1"><span class="num">05</span><span>2019–24 · EX-APPLE · iOS</span></div>
-          <div class="work-name">Retail POS &amp; Payments</div>
-          <div class="work-meta">Five-year stretch on the Retail Engineering team. Swift migration, Tap to Pay, Wallet integrations.</div>
-          <div class="work-tags">
+            <span class="tag">Llama 3.3</span>
             <span class="tag">Swift</span>
-            <span class="tag">VIPER</span>
-            <span class="tag">ProximityReader</span>
-            <span class="tag">PassKit</span>
           </div>
-          <a class="work-link" href="https://linkedin.com/in/rakesh-varmaios" target="_blank" rel="noopener">Details on LinkedIn <span class="arrow">↗</span></a>
-        </article>
-
-        <article class="work-item">
-          <div class="work-row-1"><span class="num">06</span><span>2024–26 · CONTRACT · iOS · HARDWARE</span></div>
-          <div class="work-name">Native Check-In Kiosk</div>
-          <div class="work-meta">iPad kiosk replacing a third-party check-in stack. Thermal printers over TCP, MDM, accessibility.</div>
-          <div class="work-tags">
-            <span class="tag">UIKit</span>
-            <span class="tag">Hardware I/O</span>
-            <span class="tag">MDM</span>
-          </div>
-          <a class="work-link" href="https://linkedin.com/in/rakesh-varmaios" target="_blank" rel="noopener">Details on LinkedIn <span class="arrow">↗</span></a>
-        </article>
-
-        <article class="work-item">
-          <div class="work-row-1"><span class="num">07</span><span>2024–26 · CONTRACT · iOS · PAYMENTS</span></div>
-          <div class="work-name">National Carrier App Features</div>
-          <div class="work-meta">Shipped manage-travel, seat selection, Apple Pay flows. Led the dependency &amp; analytics modernization.</div>
-          <div class="work-tags">
-            <span class="tag">Apple Pay</span>
-            <span class="tag">Combine</span>
-            <span class="tag">SPM</span>
-            <span class="tag">Adobe Analytics</span>
-          </div>
-          <a class="work-link" href="https://linkedin.com/in/rakesh-varmaios" target="_blank" rel="noopener">Details on LinkedIn <span class="arrow">↗</span></a>
-        </article>
-
-        <article class="work-item">
-          <div class="work-row-1"><span class="num">08</span><span>2018–19 · CONTRACT · RN + iOS</span></div>
-          <div class="work-name">Enterprise Auth &amp; Field Apps</div>
-          <div class="work-meta">React Native + native iOS modules for enterprise authentication and operations tooling.</div>
-          <div class="work-tags">
-            <span class="tag">React Native</span>
-            <span class="tag">Native modules</span>
-            <span class="tag">Biometrics</span>
-          </div>
-          <a class="work-link" href="https://linkedin.com/in/rakesh-varmaios" target="_blank" rel="noopener">Details on LinkedIn <span class="arrow">↗</span></a>
-        </article>
-
-      </div>
-    </section>
-
-    <section id="experience" class="reveal">
-      <div class="section-head">
-        <div class="section-num">02 — Experience</div>
-        <h3 class="section-title">Where production work shipped from.</h3>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-row">
-          <div class="timeline-year">2024 → 2026</div>
-          <div class="timeline-role">Senior / Lead iOS Developer <span class="where">· Contract</span></div>
-          <a class="timeline-link" href="https://linkedin.com/in/rakesh-varmaios" target="_blank" rel="noopener">DETAILS ↗</a>
+          <span class="work-status proto">In development</span>
         </div>
-        <div class="timeline-row">
-          <div class="timeline-year">2019 → 2024</div>
-          <div class="timeline-role">Senior iOS Engineer <span class="where">· Ex-Apple contractor</span></div>
-          <a class="timeline-link" href="https://linkedin.com/in/rakesh-varmaios" target="_blank" rel="noopener">DETAILS ↗</a>
-        </div>
-        <div class="timeline-row">
-          <div class="timeline-year">2018 → 2019</div>
-          <div class="timeline-role">iOS Application Developer <span class="where">· Contract</span></div>
-          <a class="timeline-link" href="https://linkedin.com/in/rakesh-varmaios" target="_blank" rel="noopener">DETAILS ↗</a>
-        </div>
-        <div class="timeline-row">
-          <div class="timeline-year">2016 → 2017</div>
-          <div class="timeline-role">Web Developer <span class="where">· Hyderabad, India</span></div>
-          <a class="timeline-link" href="https://linkedin.com/in/rakesh-varmaios" target="_blank" rel="noopener">DETAILS ↗</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="stack" class="reveal">
-      <div class="section-head">
-        <div class="section-num">03 — Stack</div>
-        <h3 class="section-title">What I reach for.</h3>
-      </div>
-
-      <div class="stack">
-        <div class="stack-group">
-          <h4>iOS Native</h4>
-          <div class="stack-items">
-            <span class="chip">Swift</span>
-            <span class="chip">SwiftUI</span>
-            <span class="chip">UIKit</span>
-            <span class="chip">Combine</span>
-            <span class="chip">async/await</span>
-            <span class="chip">VIPER</span>
-            <span class="chip">SwiftData</span>
-            <span class="chip">Realm</span>
-          </div>
-        </div>
-        <div class="stack-group">
-          <h4>Apple ML / Media</h4>
-          <div class="stack-items">
-            <span class="chip">CoreML</span>
-            <span class="chip">CreateML</span>
-            <span class="chip">Vision</span>
-            <span class="chip">VisionKit</span>
-            <span class="chip">AVFoundation</span>
-            <span class="chip">Foundation Models</span>
-          </div>
-        </div>
-        <div class="stack-group">
-          <h4>AI Engineering</h4>
-          <div class="stack-items">
-            <span class="chip">LangGraph</span>
-            <span class="chip">MCP servers</span>
-            <span class="chip">Llama 3.3</span>
-            <span class="chip">Cloudflare Workers AI</span>
-            <span class="chip">Claude Code</span>
-            <span class="chip">Prompt eng.</span>
-          </div>
-        </div>
-        <div class="stack-group">
-          <h4>Cross-Platform</h4>
-          <div class="stack-items">
-            <span class="chip">Flutter</span>
-            <span class="chip">React Native</span>
-            <span class="chip">Dart</span>
-            <span class="chip">JS↔native bridges</span>
-          </div>
-        </div>
-        <div class="stack-group">
-          <h4>Payments</h4>
-          <div class="stack-items">
-            <span class="chip">Apple Pay</span>
-            <span class="chip">PassKit</span>
-            <span class="chip">ProximityReader</span>
-            <span class="chip">Tap to Pay</span>
-            <span class="chip">Stripe</span>
-          </div>
-        </div>
-        <div class="stack-group">
-          <h4>Backend &amp; Integrations</h4>
-          <div class="stack-items">
-            <span class="chip">GraphQL (Apollo)</span>
-            <span class="chip">REST</span>
-            <span class="chip">WebSocket</span>
-            <span class="chip">APNS</span>
-            <span class="chip">Firebase</span>
-          </div>
-        </div>
-        <div class="stack-group">
-          <h4>DevOps</h4>
-          <div class="stack-items">
-            <span class="chip">Jenkins</span>
-            <span class="chip">Azure DevOps</span>
-            <span class="chip">Dynatrace</span>
-            <span class="chip">Splunk</span>
-            <span class="chip">Kubernetes</span>
-            <span class="chip">SPM</span>
-          </div>
-        </div>
-        <div class="stack-group">
-          <h4>Testing</h4>
-          <div class="stack-items">
-            <span class="chip">XCTest</span>
-            <span class="chip">XCUITest</span>
-            <span class="chip">Instruments</span>
+        <div class="work-visual">
+          <div class="agent-graph">
+            <div class="badge">● Agent Flow</div>
+            <svg viewBox="0 0 320 440" xmlns="http://www.w3.org/2000/svg">
+              <!-- Edges -->
+              <line x1="160" y1="80"  x2="80"  y2="180" />
+              <line x1="160" y1="80"  x2="240" y2="180" />
+              <line x1="80"  y1="180" x2="160" y2="280" />
+              <line x1="240" y1="180" x2="160" y2="280" />
+              <line x1="160" y1="280" x2="160" y2="380" />
+              <!-- Nodes -->
+              <g class="node">
+                <circle cx="160" cy="80" r="22" />
+                <text x="160" y="84">user</text>
+              </g>
+              <g class="node-bg"><circle cx="80" cy="180" r="32" /></g>
+              <g class="node">
+                <circle cx="80" cy="180" r="18" />
+                <text x="80" y="184">on-device</text>
+              </g>
+              <g class="node-bg"><circle cx="240" cy="180" r="32" /></g>
+              <g class="node">
+                <circle cx="240" cy="180" r="18" />
+                <text x="240" y="184">cloud LLM</text>
+              </g>
+              <g class="node-bg"><circle cx="160" cy="280" r="32" /></g>
+              <g class="node">
+                <circle cx="160" cy="280" r="18" />
+                <text x="160" y="284">MCP</text>
+              </g>
+              <g class="node">
+                <circle cx="160" cy="380" r="22" />
+                <text x="160" y="384">result</text>
+              </g>
+            </svg>
+            <div class="footer">
+              <span>LangGraph · MCP</span>
+              <span>HIPAA-avoidant</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="reveal">
-      <div class="section-head">
-        <div class="section-num">04 — About / Contact</div>
-        <h3 class="section-title">Solo. Native first. Shipping.</h3>
+    <section id="stack" class="stack-section reveal">
+      <div class="stack-head">
+        <div class="stack-num">04 &nbsp;&middot;&nbsp; STACK</div>
+        <h3 class="stack-title">What I build with.</h3>
       </div>
+      <div class="stack-flow">
+        <span class="chip gold">Swift</span>
+        <span class="chip gold">SwiftUI</span>
+        <span class="chip">UIKit</span>
+        <span class="chip">Combine</span>
+        <span class="chip">async/await</span>
+        <span class="chip">SwiftData</span>
+        <span class="chip">CoreML</span>
+        <span class="chip">CreateML</span>
+        <span class="chip">Vision</span>
+        <span class="chip">AVFoundation</span>
+        <span class="chip gold">Foundation Models</span>
+        <span class="chip">WidgetKit</span>
+        <span class="chip">Live Activities</span>
+        <span class="chip gold">LangGraph</span>
+        <span class="chip gold">MCP</span>
+        <span class="chip">Llama 3.3</span>
+        <span class="chip">Cloudflare Workers AI</span>
+        <span class="chip">Claude Code</span>
+        <span class="chip gold">Flutter</span>
+        <span class="chip">Dart</span>
+        <span class="chip">React Native</span>
+        <span class="chip">Firebase</span>
+        <span class="chip">GraphQL</span>
+        <span class="chip">PassKit</span>
+        <span class="chip">Apple Pay</span>
+      </div>
+    </section>
 
-      <div class="about-grid">
-        <div class="about-text">
-          <p>I'm a <strong>Lead iOS developer</strong> with a long stretch on Apple platforms, including five years as an <strong>Apple contractor</strong> on the Retail team. I'm comfortable owning a feature end-to-end &mdash; from dataset preparation through App Store release.</p>
-          <p>On the side I publish indie apps as <strong>Vector0</strong>, and spend evenings on agentic AI: on-device Foundation Models, LangGraph workflows, MCP, and building entire projects through Claude Code loops.</p>
-          <p>The full timeline, references, and case studies live on LinkedIn.</p>
-        </div>
-
-        <div class="contact-list">
+    <section id="contact" class="contact-section reveal">
+      <div class="contact-row">
+        <h3>Say <br /><span class="highlight">hello.</span></h3>
+        <div class="contact-links">
           <a href="https://linkedin.com/in/rakesh-varmaios" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
           <a href="mailto:devrakeshv@gmail.com">devrakeshv@gmail.com <span class="arrow">→</span></a>
           <a href="https://github.com/vectorxlabs" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>
@@ -783,14 +683,13 @@
     </section>
 
     <footer>
-      <span>© 2026 RAKESH VARMA &middot; VECTOR0</span>
+      <span>© 2026 VECTOR0 &middot; BUILT SOLO</span>
       <a href="https://vectorxlabs.github.io/snap-privacy/" target="_blank" rel="noopener">PRIVACY ↗</a>
     </footer>
 
   </div>
 
   <script>
-    // Scroll reveal
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) {
@@ -798,24 +697,22 @@
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.05, rootMargin: '0px 0px -60px 0px' });
+    }, { threshold: 0.06, rootMargin: '0px 0px -60px 0px' });
     document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
-    // Cursor follower (desktop only)
     const cursor = document.querySelector('.cursor');
     if (window.matchMedia('(pointer: fine)').matches) {
       let raf;
       window.addEventListener('mousemove', (e) => {
-        cursor.classList.add('active');
+        cursor.style.opacity = '1';
         if (raf) cancelAnimationFrame(raf);
         raf = requestAnimationFrame(() => {
           cursor.style.left = e.clientX + 'px';
           cursor.style.top = e.clientY + 'px';
         });
       });
-      window.addEventListener('mouseleave', () => cursor.classList.remove('active'));
-      // Grow on hoverable elements
-      document.querySelectorAll('a, button, .work-item').forEach((el) => {
+      window.addEventListener('mouseleave', () => cursor.style.opacity = '0');
+      document.querySelectorAll('a, button, .work-link, .chip').forEach((el) => {
         el.addEventListener('mouseenter', () => {
           cursor.style.transform = 'translate(-50%, -50%) scale(3)';
           cursor.classList.add('hover');
