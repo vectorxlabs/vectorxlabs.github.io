@@ -179,6 +179,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       .hero h1 .highlight { animation: none; }
+      .reveal, .reveal-x { opacity: 1 !important; transform: none !important; transition: none; }
     }
 
     .hero p.lead {
@@ -641,6 +642,18 @@
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
+    /* Slide-in from outer edges (glitchprod-style) */
+    .reveal-x {
+      opacity: 0;
+      transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform, opacity;
+    }
+    .work-showcase .work-info   { transform: translateX(-72px); }
+    .work-showcase .work-visual { transform: translateX(72px); }
+    .work-showcase.flip .work-info   { transform: translateX(72px); }
+    .work-showcase.flip .work-visual { transform: translateX(-72px); }
+    .reveal-x.visible { opacity: 1 !important; transform: translateX(0) !important; }
+
     @media (max-width: 560px) {
       .container { padding: 0 22px; }
       .nav-links { gap: 16px; }
@@ -676,7 +689,7 @@
         <span>2026</span>
       </div>
       <div class="work-showcase">
-        <div class="work-info">
+        <div class="work-info reveal-x">
           <h2>Snap: Quiz Battles</h2>
           <p class="work-blurb">Daily pop-culture trivia with a <em>simulated-multiplayer</em> LIVE mode &mdash; 11 named opponents whose scores tick question by question. Entirely client-side. Sub-second cold start.</p>
           <div class="work-tags">
@@ -687,7 +700,7 @@
           </div>
           <span class="work-status review">In App Store review</span>
         </div>
-        <div class="work-visual">
+        <div class="work-visual reveal-x">
           <video src="images/snap-loop.mp4" poster="images/snap-hero.jpg" autoplay loop muted playsinline preload="metadata" aria-label="Snap: Quiz Battles gameplay loop"></video>
         </div>
       </div>
@@ -699,7 +712,7 @@
         <span>2025</span>
       </div>
       <div class="work-showcase flip">
-        <div class="work-info">
+        <div class="work-info reveal-x">
           <h2>Grid Glide</h2>
           <p class="work-blurb">Fast word-puzzle game with a <em>celestial zero-gravity</em> aesthetic. Solo built on Flutter, wired with Firebase Analytics, Crashlytics, and FCM for an activation funnel and retention pushes.</p>
           <div class="work-tags">
@@ -710,7 +723,7 @@
           </div>
           <a class="work-link" href="https://apps.apple.com/us/app/grid-glide/id6762373685" target="_blank" rel="noopener">Open in App Store <span class="arrow">↗</span></a>
         </div>
-        <div class="work-visual">
+        <div class="work-visual reveal-x">
           <video src="images/grid-glide-loop.mp4" poster="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/26/5e/3c/265e3ce8-a90a-a81d-810b-881d83674c8f/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" autoplay loop muted playsinline preload="metadata" aria-label="Grid Glide gameplay loop"></video>
         </div>
       </div>
@@ -722,7 +735,7 @@
         <span>2026</span>
       </div>
       <div class="work-showcase">
-        <div class="work-info">
+        <div class="work-info reveal-x">
           <h2>MedBill Companion</h2>
           <p class="work-blurb">Two-mode iOS app pairing <em>on-device Apple Foundation Models</em> for PHI-touching reasoning with cloud LLMs for pre-visit prep. A HIPAA-avoidance architecture &mdash; protected data never leaves the device. LangGraph orchestrates multi-step flows. MCP servers connect external context.</p>
           <div class="work-tags">
@@ -734,7 +747,7 @@
           </div>
           <span class="work-status proto">In development</span>
         </div>
-        <div class="work-visual">
+        <div class="work-visual reveal-x">
           <video src="images/medbill-loop.mp4" autoplay loop muted playsinline preload="metadata" aria-label="MedBill Companion — agentic cost estimate flow"></video>
         </div>
       </div>
@@ -746,7 +759,7 @@
         <span>2026</span>
       </div>
       <div class="work-showcase flip">
-        <div class="work-info">
+        <div class="work-info reveal-x">
           <h2>Pitch Pulse 26</h2>
           <p class="work-blurb">A Lock-Screen-first companion for the 2026 football tournament. <em>Live Activities</em> push score and momentum in real time &mdash; no app open required. Dynamic Island states, Home Screen widgets, 104 fixtures, 16 host-city guides. Backed by Cloudflare Workers with in-edge APNs push. Zero tracking, $0/mo to run.</p>
           <div class="work-tags">
@@ -759,7 +772,7 @@
           </div>
           <span class="work-status proto">In development</span>
         </div>
-        <div class="work-visual">
+        <div class="work-visual reveal-x">
           <video src="images/pitch-pulse-loop.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Pitch Pulse 26 — Live Activity on Lock Screen"></video>
         </div>
       </div>
@@ -826,7 +839,7 @@
         }
       });
     }, { threshold: 0.06, rootMargin: '0px 0px -60px 0px' });
-    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    document.querySelectorAll('.reveal, .reveal-x').forEach((el) => io.observe(el));
 
     const cursor = document.querySelector('.cursor');
     if (window.matchMedia('(pointer: fine)').matches) {
